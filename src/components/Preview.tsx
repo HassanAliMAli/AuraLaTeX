@@ -19,23 +19,25 @@ export default function Preview({ pdfData, isCompiling, error, onDownload }: Pre
       return;
     }
 
-    try {
-      const binaryString = atob(pdfData);
-      const bytes = new Uint8Array(binaryString.length);
-      for (let i = 0; i < binaryString.length; i++) {
-        bytes[i] = binaryString.charCodeAt(i);
+    let url: string | null = null;
+    
+    const createUrl = async () => {
+      try {
+        const res = await fetch(`data:application/pdf;base64,${pdfData}`);
+        const blob = await res.blob();
+        url = URL.createObjectURL(blob);
+        setBlobUrl(url);
+      } catch (err) {
+        console.error('Failed to create blob URL:', err);
+        setBlobUrl(null);
       }
-      const blob = new Blob([bytes], { type: 'application/pdf' });
-      const url = URL.createObjectURL(blob);
-      setBlobUrl(url);
+    };
 
-      return () => {
-        URL.revokeObjectURL(url);
-      };
-    } catch (err) {
-      console.error('Failed to create blob URL:', err);
-      setBlobUrl(null);
-    }
+    createUrl();
+
+    return () => {
+      if (url) URL.revokeObjectURL(url);
+    };
   }, [pdfData]);
 
   const handleZoomIn = () => setZoom(Math.min(zoom + 25, 200));

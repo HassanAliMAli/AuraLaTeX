@@ -123,19 +123,15 @@ export default function EditorPage({ onBack, theme, setTheme }: EditorPageProps)
     }
   };
 
-  const handleDownloadPdf = () => {
+  const handleDownloadPdf = async () => {
     if (!pdfData) {
       showToast('Please compile your document first', 'info');
       return;
     }
 
     try {
-      const binaryString = atob(pdfData);
-      const bytes = new Uint8Array(binaryString.length);
-      for (let i = 0; i < binaryString.length; i++) {
-        bytes[i] = binaryString.charCodeAt(i);
-      }
-      const blob = new Blob([bytes], { type: 'application/pdf' });
+      const res = await fetch(`data:application/pdf;base64,${pdfData}`);
+      const blob = await res.blob();
       const url = URL.createObjectURL(blob);
 
       const link = document.createElement('a');
