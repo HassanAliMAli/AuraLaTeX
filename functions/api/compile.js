@@ -1,3 +1,5 @@
+import { Buffer } from 'node:buffer';
+
 export async function onRequestPost(context) {
   const { request } = context;
 
