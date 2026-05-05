@@ -109,52 +109,25 @@ export default function Preview({ pdfData, isCompiling, error, onDownload }: Pre
       </div>
 
       {/* Preview Content */}
-      <div className="flex-1 overflow-auto flex flex-col items-center justify-center bg-neutral-800 p-4">
+      <div className="flex-1 overflow-hidden flex flex-col bg-[#1a1a1a]">
         {error ? (
-          <div className="flex flex-col items-center justify-center text-center p-8 max-w-2xl">
+          <div className="flex-1 flex flex-col items-center justify-center text-center p-8 overflow-auto">
             <FileWarning className="w-16 h-16 text-red-400 mb-4" />
             <h3 className="text-lg font-medium text-foreground mb-2">Compilation Error</h3>
-            <pre className="text-sm text-red-400 bg-red-500/10 p-4 rounded-lg max-w-full overflow-auto whitespace-pre-wrap text-left">
+            <pre className="text-sm text-red-400 bg-red-500/10 p-4 rounded-lg max-w-2xl w-full overflow-auto whitespace-pre-wrap text-left">
               {error}
             </pre>
           </div>
         ) : blobUrl ? (
-          <div
-            className="w-full h-full flex flex-col items-center"
-            style={{ maxWidth: `${(8.5 * 96 * zoom) / 100}px` }}
-          >
-            <object
-              data={blobUrl}
-              type="application/pdf"
-              className="w-full bg-white rounded-lg shadow-2xl"
-              style={{ height: '100%', minHeight: '600px' }}
-            >
-              <div className="flex flex-col items-center justify-center h-full text-center p-8 bg-surface rounded-lg">
-                <div className="w-20 h-24 bg-gradient-to-br from-red-500 to-red-600 rounded-lg flex items-center justify-center mb-4 shadow-lg">
-                  <span className="text-white text-xl font-bold">PDF</span>
-                </div>
-                <h3 className="text-lg font-medium text-foreground mb-2">PDF Ready!</h3>
-                <p className="text-sm text-muted mb-6 max-w-xs">
-                  Your document compiled successfully. Click below to view or download.
-                </p>
-                <div className="flex gap-3">
-                  <button
-                    onClick={handleOpenInNewTab}
-                    className="flex items-center gap-2 px-4 py-2 bg-accent text-white rounded-lg hover:bg-accent-hover transition-colors"
-                  >
-                    <ExternalLink className="w-4 h-4" />
-                    Open PDF
-                  </button>
-                  <button
-                    onClick={onDownload}
-                    className="flex items-center gap-2 px-4 py-2 border border-border text-foreground rounded-lg hover:bg-surface-hover transition-colors"
-                  >
-                    <Download className="w-4 h-4" />
-                    Download
-                  </button>
-                </div>
-              </div>
-            </object>
+          <div className="flex-1 w-full relative">
+            <iframe
+              src={`${blobUrl}#toolbar=0&navpanes=0&view=FitH`}
+              className="w-full h-full border-none bg-white"
+              title="PDF Preview"
+            />
+            
+            {/* Optional Zoom Overlay for better control if needed, 
+                but browser native iframe zoom handles most cases */}
           </div>
         ) : isCompiling ? (
           <div className="flex flex-col items-center justify-center text-center">
