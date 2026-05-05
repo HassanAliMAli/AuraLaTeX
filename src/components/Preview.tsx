@@ -9,7 +9,6 @@ interface PreviewProps {
 }
 
 export default function Preview({ pdfData, isCompiling, error, onDownload }: PreviewProps) {
-  const [zoom, setZoom] = useState(100);
   const [blobUrl, setBlobUrl] = useState<string | null>(null);
   const containerRef = useRef<HTMLDivElement>(null);
 
@@ -39,10 +38,6 @@ export default function Preview({ pdfData, isCompiling, error, onDownload }: Pre
       if (url) URL.revokeObjectURL(url);
     };
   }, [pdfData]);
-
-  const handleZoomIn = () => setZoom(Math.min(zoom + 25, 200));
-  const handleZoomOut = () => setZoom(Math.max(zoom - 25, 50));
-  const handleResetZoom = () => setZoom(100);
 
   const handleOpenInNewTab = () => {
     if (blobUrl) {
@@ -75,20 +70,10 @@ export default function Preview({ pdfData, isCompiling, error, onDownload }: Pre
         </div>
 
         <div className="flex items-center gap-1">
-          <button onClick={handleZoomOut} className="toolbar-btn" title="Zoom Out" disabled={!pdfData}>
-            <ZoomOut className="w-4 h-4" />
-          </button>
-          <span className="text-xs text-muted min-w-[3rem] text-center">{zoom}%</span>
-          <button onClick={handleZoomIn} className="toolbar-btn" title="Zoom In" disabled={!pdfData}>
-            <ZoomIn className="w-4 h-4" />
-          </button>
-          <button onClick={handleResetZoom} className="toolbar-btn" title="Reset Zoom" disabled={!pdfData}>
-            <RotateCw className="w-4 h-4" />
-          </button>
-          <div className="w-px h-4 bg-border mx-1" />
           <button onClick={handleFullscreen} className="toolbar-btn" title="Fullscreen">
             <Maximize2 className="w-4 h-4" />
           </button>
+          <div className="w-px h-4 bg-border mx-1" />
           <button
             onClick={handleOpenInNewTab}
             disabled={!blobUrl}

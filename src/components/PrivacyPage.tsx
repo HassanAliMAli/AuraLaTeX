@@ -101,7 +101,7 @@ export default function PrivacyPage({ onBack, onNavigate }: PrivacyPageProps) {
           <section className="bg-white/5 border border-white/10 rounded-2xl p-6 md:p-8">
             <h2 className="text-2xl font-semibold mb-4 text-emerald-400">Local Storage</h2>
             <p className="text-zinc-300 leading-relaxed">
-              TeXFlow may use your browser's local storage to save your preferences (such as theme settings and font size). 
+              AuraLaTeX may use your browser's local storage to save your preferences (such as theme settings and font size). 
               This data never leaves your device and can be cleared at any time through your browser settings.
             </p>
           </section>
@@ -109,7 +109,7 @@ export default function PrivacyPage({ onBack, onNavigate }: PrivacyPageProps) {
           <section className="bg-white/5 border border-white/10 rounded-2xl p-6 md:p-8">
             <h2 className="text-2xl font-semibold mb-4 text-emerald-400">Third-Party Services</h2>
             <p className="text-zinc-300 leading-relaxed">
-              TeXFlow uses a third-party LaTeX compilation service to convert your documents to PDF. 
+              AuraLaTeX uses a third-party LaTeX compilation service to convert your documents to PDF. 
               This service processes your documents in accordance with their own privacy policy. 
               We have chosen providers that share our commitment to privacy and do not retain user data.
             </p>
@@ -118,7 +118,7 @@ export default function PrivacyPage({ onBack, onNavigate }: PrivacyPageProps) {
           <section className="bg-white/5 border border-white/10 rounded-2xl p-6 md:p-8">
             <h2 className="text-2xl font-semibold mb-4 text-emerald-400">Contact Us</h2>
             <p className="text-zinc-300 leading-relaxed">
-              If you have any questions about this Privacy Policy, please contact us through our GitHub repository.
+              If you have any questions about this Privacy Policy, please contact us through our <a href="https://github.com/HassanAliMAli/AuraLaTeX" target="_blank" rel="noopener noreferrer" className="text-white hover:underline">GitHub repository</a>.
             </p>
           </section>
         </div>
@@ -127,7 +127,7 @@ export default function PrivacyPage({ onBack, onNavigate }: PrivacyPageProps) {
       {/* Footer */}
       <footer className="relative z-10 px-6 md:px-12 py-8 border-t border-white/10 mt-16">
         <div className="max-w-4xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-zinc-500 text-sm">© 2024 TeXFlow. Free and open source.</p>
+          <p className="text-zinc-500 text-sm">© 2026 AuraLaTeX. Free and open source.</p>
           <div className="flex items-center gap-6 text-sm text-zinc-400">
             <span className="text-white">Privacy</span>
             <button onClick={() => onNavigate('terms')} className="hover:text-white transition-colors">Terms</button>

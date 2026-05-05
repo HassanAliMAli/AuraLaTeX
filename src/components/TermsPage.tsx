@@ -111,15 +111,15 @@ export default function TermsPage({ onBack, onNavigate }: TermsPageProps) {
           <section className="bg-white/5 border border-white/10 rounded-2xl p-6 md:p-8">
             <h2 className="text-2xl font-semibold mb-4 text-blue-400">Intellectual Property</h2>
             <p className="text-zinc-300 leading-relaxed">
-              You retain all rights to the content you create using TeXFlow. We do not claim any ownership over your documents. 
-              The TeXFlow application, including its design, code, and branding, is protected by intellectual property laws.
+              You retain all rights to the content you create using AuraLaTeX. We do not claim any ownership over your documents. 
+              The AuraLaTeX application, including its design, code, and branding, is protected by intellectual property laws.
             </p>
           </section>
 
           <section className="bg-white/5 border border-white/10 rounded-2xl p-6 md:p-8">
             <h2 className="text-2xl font-semibold mb-4 text-blue-400">Disclaimer of Warranties</h2>
             <p className="text-zinc-300 leading-relaxed">
-              TeXFlow is provided "as is" without any warranties, expressed or implied. We do not guarantee that the service 
+              AuraLaTeX is provided "as is" without any warranties, expressed or implied. We do not guarantee that the service 
               will be uninterrupted, error-free, or that compiled documents will be free of errors. You use the service at your own risk.
             </p>
           </section>
@@ -127,7 +127,7 @@ export default function TermsPage({ onBack, onNavigate }: TermsPageProps) {
           <section className="bg-white/5 border border-white/10 rounded-2xl p-6 md:p-8">
             <h2 className="text-2xl font-semibold mb-4 text-blue-400">Limitation of Liability</h2>
             <p className="text-zinc-300 leading-relaxed">
-              In no event shall TeXFlow or its creators be liable for any indirect, incidental, special, consequential, 
+              In no event shall AuraLaTeX or its creators be liable for any indirect, incidental, special, consequential, 
               or punitive damages arising out of or related to your use of the service. This includes, but is not limited to, 
               loss of data, loss of profits, or business interruption.
             </p>
@@ -136,7 +136,7 @@ export default function TermsPage({ onBack, onNavigate }: TermsPageProps) {
           <section className="bg-white/5 border border-white/10 rounded-2xl p-6 md:p-8">
             <h2 className="text-2xl font-semibold mb-4 text-blue-400">Service Availability</h2>
             <p className="text-zinc-300 leading-relaxed">
-              We strive to keep TeXFlow available at all times, but we do not guarantee uninterrupted access. 
+              We strive to keep AuraLaTeX available at all times, but we do not guarantee uninterrupted access. 
               We reserve the right to modify, suspend, or discontinue the service at any time without notice.
             </p>
           </section>
@@ -152,7 +152,7 @@ export default function TermsPage({ onBack, onNavigate }: TermsPageProps) {
           <section className="bg-white/5 border border-white/10 rounded-2xl p-6 md:p-8">
             <h2 className="text-2xl font-semibold mb-4 text-blue-400">Contact</h2>
             <p className="text-zinc-300 leading-relaxed">
-              If you have any questions about these Terms of Service, please contact us through our GitHub repository.
+              If you have any questions about these Terms of Service, please contact us through our <a href="https://github.com/HassanAliMAli/AuraLaTeX" target="_blank" rel="noopener noreferrer" className="text-white hover:underline">GitHub repository</a>.
             </p>
           </section>
         </div>
@@ -161,7 +161,7 @@ export default function TermsPage({ onBack, onNavigate }: TermsPageProps) {
       {/* Footer */}
       <footer className="relative z-10 px-6 md:px-12 py-8 border-t border-white/10 mt-16">
         <div className="max-w-4xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-zinc-500 text-sm">© 2024 TeXFlow. Free and open source.</p>
+          <p className="text-zinc-500 text-sm">© 2026 AuraLaTeX. Free and open source.</p>
           <div className="flex items-center gap-6 text-sm text-zinc-400">
             <button onClick={() => onNavigate('privacy')} className="hover:text-white transition-colors">Privacy</button>
             <span className="text-white">Terms</span>

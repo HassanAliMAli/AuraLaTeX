@@ -70,8 +70,12 @@ export default function Header({
         <div className="w-px h-6 bg-border hidden sm:block" />
 
         {/* Logo */}
-        <div className="flex items-center gap-2">
-          <div className="w-8 h-8 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-lg flex items-center justify-center shadow-lg">
+        <div 
+          className="flex items-center gap-2 cursor-pointer hover:opacity-80 transition-all hover:scale-[1.02] active:scale-95 group" 
+          onClick={onBack}
+          title="Back to Home"
+        >
+          <div className="w-8 h-8 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-lg flex items-center justify-center shadow-lg group-hover:shadow-emerald-500/30">
             <span className="text-white font-bold text-sm">A<sub className="text-[10px]">L</sub></span>
           </div>
           <span className="font-semibold text-foreground text-lg tracking-tight hidden md:block">AuraLaTeX</span>

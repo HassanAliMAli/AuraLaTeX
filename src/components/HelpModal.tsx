@@ -28,7 +28,7 @@ export default function HelpModal({ onClose }: HelpModalProps) {
             </div>
             <div>
               <h2 className="text-xl font-bold text-foreground">Help & Documentation</h2>
-              <p className="text-sm text-muted">Learn how to use TeXFlow</p>
+              <p className="text-sm text-muted">Learn how to use AuraLaTeX</p>
             </div>
           </div>
           <button
