@@ -42,3 +42,4 @@
 - **PDF**: Handled as Base64 strings internally, converted to Blob URLs for preview
 - **Storage**: Local state for editor content; Supabase for persistent projects
 - **Project Name**: AuraLaTeX
+- **Last Updated**: 2024-05-05
