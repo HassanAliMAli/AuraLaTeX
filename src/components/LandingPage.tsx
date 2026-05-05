@@ -84,7 +84,7 @@ export default function LandingPage({ onGetStarted, onNavigate }: LandingPagePro
       <nav className="relative z-10 flex items-center justify-between px-6 md:px-12 py-6">
         <div className="flex items-center gap-3">
           <div className="w-10 h-10 bg-gradient-to-br from-emerald-400 to-teal-500 rounded-xl flex items-center justify-center shadow-lg shadow-emerald-500/30">
-            <span className="text-white font-bold">T<sub className="text-[10px]">X</sub></span>
+            <span className="text-white font-bold">A<sub className="text-[10px]">L</sub></span>
           </div>
           <span className="text-xl font-bold tracking-tight">AuraLaTeX</span>
         </div>

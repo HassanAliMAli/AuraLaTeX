@@ -33,9 +33,9 @@ export default function TermsPage({ onBack, onNavigate }: TermsPageProps) {
         </button>
         <div className="flex items-center gap-3">
           <div className="w-8 h-8 bg-gradient-to-br from-emerald-400 to-teal-500 rounded-lg flex items-center justify-center">
-            <span className="text-white font-bold text-sm">T<sub className="text-[8px]">X</sub></span>
+            <span className="text-white font-bold text-sm">A<sub className="text-[8px]">L</sub></span>
           </div>
-          <span className="font-semibold">TeXFlow</span>
+          <span className="font-semibold">AuraLaTeX</span>
         </div>
       </nav>
 
@@ -55,7 +55,7 @@ export default function TermsPage({ onBack, onNavigate }: TermsPageProps) {
           <section className="bg-white/5 border border-white/10 rounded-2xl p-6 md:p-8">
             <h2 className="text-2xl font-semibold mb-4 text-blue-400">Acceptance of Terms</h2>
             <p className="text-zinc-300 leading-relaxed">
-              By accessing and using TeXFlow, you accept and agree to be bound by the terms and provisions of this agreement. 
+              By accessing and using AuraLaTeX, you accept and agree to be bound by the terms and provisions of this agreement. 
               If you do not agree to these terms, please do not use our service.
             </p>
           </section>
@@ -63,7 +63,7 @@ export default function TermsPage({ onBack, onNavigate }: TermsPageProps) {
           <section className="bg-white/5 border border-white/10 rounded-2xl p-6 md:p-8">
             <h2 className="text-2xl font-semibold mb-4 text-blue-400">Description of Service</h2>
             <p className="text-zinc-300 leading-relaxed mb-4">
-              TeXFlow is a free, browser-based LaTeX editor that allows you to:
+              AuraLaTeX is a free, browser-based LaTeX editor that allows you to:
             </p>
             <ul className="space-y-2 text-zinc-300">
               <li className="flex items-start gap-3">
@@ -87,7 +87,7 @@ export default function TermsPage({ onBack, onNavigate }: TermsPageProps) {
 
           <section className="bg-white/5 border border-white/10 rounded-2xl p-6 md:p-8">
             <h2 className="text-2xl font-semibold mb-4 text-blue-400">User Responsibilities</h2>
-            <p className="text-zinc-300 leading-relaxed mb-4">When using TeXFlow, you agree to:</p>
+            <p className="text-zinc-300 leading-relaxed mb-4">When using AuraLaTeX, you agree to:</p>
             <ul className="space-y-2 text-zinc-300">
               <li className="flex items-start gap-3">
                 <span className="text-blue-400 mt-1">•</span>

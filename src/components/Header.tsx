@@ -72,9 +72,9 @@ export default function Header({
         {/* Logo */}
         <div className="flex items-center gap-2">
           <div className="w-8 h-8 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-lg flex items-center justify-center shadow-lg">
-            <span className="text-white font-bold text-sm">T<sub className="text-[10px]">X</sub></span>
+            <span className="text-white font-bold text-sm">A<sub className="text-[10px]">L</sub></span>
           </div>
-          <span className="font-semibold text-foreground text-lg tracking-tight hidden md:block">TeXFlow</span>
+          <span className="font-semibold text-foreground text-lg tracking-tight hidden md:block">AuraLaTeX</span>
         </div>
 
         {/* File Menu (Desktop) */}

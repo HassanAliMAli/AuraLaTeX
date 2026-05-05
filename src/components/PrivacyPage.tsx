@@ -33,9 +33,9 @@ export default function PrivacyPage({ onBack, onNavigate }: PrivacyPageProps) {
         </button>
         <div className="flex items-center gap-3">
           <div className="w-8 h-8 bg-gradient-to-br from-emerald-400 to-teal-500 rounded-lg flex items-center justify-center">
-            <span className="text-white font-bold text-sm">T<sub className="text-[8px]">X</sub></span>
+            <span className="text-white font-bold text-sm">A<sub className="text-[8px]">L</sub></span>
           </div>
-          <span className="font-semibold">TeXFlow</span>
+          <span className="font-semibold">AuraLaTeX</span>
         </div>
       </nav>
 
@@ -55,7 +55,7 @@ export default function PrivacyPage({ onBack, onNavigate }: PrivacyPageProps) {
           <section className="bg-white/5 border border-white/10 rounded-2xl p-6 md:p-8">
             <h2 className="text-2xl font-semibold mb-4 text-emerald-400">Our Commitment to Privacy</h2>
             <p className="text-zinc-300 leading-relaxed">
-              TeXFlow is designed with privacy as a core principle. We believe that your documents are your business, 
+              AuraLaTeX is designed with privacy as a core principle. We believe that your documents are your business, 
               and we've built our service to reflect that belief. This privacy policy explains our approach to your data.
             </p>
           </section>
@@ -65,7 +65,7 @@ export default function PrivacyPage({ onBack, onNavigate }: PrivacyPageProps) {
             <ul className="space-y-3 text-zinc-300">
               <li className="flex items-start gap-3">
                 <span className="text-emerald-400 mt-1">✓</span>
-                <span><strong>No account required:</strong> You can use TeXFlow without creating an account or providing any personal information.</span>
+                <span><strong>No account required:</strong> You can use AuraLaTeX without creating an account or providing any personal information.</span>
               </li>
               <li className="flex items-start gap-3">
                 <span className="text-emerald-400 mt-1">✓</span>

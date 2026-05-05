@@ -52,9 +52,14 @@ export async function onRequestPost(context) {
     
     if (contentType && contentType.includes('application/pdf')) {
       const pdfBuffer = await response.arrayBuffer();
-      // In Cloudflare Workers, we can use btoa for small buffers or a more robust method
-      // Since it's a PDF, we'll convert to Base64
-      const binary = String.fromCharCode(...new Uint8Array(pdfBuffer));
+      
+      // Manual loop conversion to avoid "Maximum call stack size exceeded" 
+      // which happens with String.fromCharCode(...new Uint8Array(buffer)) on files > 64KB
+      const bytes = new Uint8Array(pdfBuffer);
+      let binary = '';
+      for (let i = 0; i < bytes.byteLength; i++) {
+        binary += String.fromCharCode(bytes[i]);
+      }
       const base64Pdf = btoa(binary);
       
       return new Response(JSON.stringify({ pdf: base64Pdf, success: true }), {
