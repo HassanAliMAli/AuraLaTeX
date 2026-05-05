@@ -1,50 +1,45 @@
 export async function onRequestPost(context) {
   const { request } = context;
 
-  // Set CORS headers
-  const headers = new Headers();
-  headers.set('Access-Control-Allow-Origin', '*');
-  headers.set('Access-Control-Allow-Methods', 'POST, OPTIONS');
-  headers.set('Access-Control-Allow-Headers', 'Content-Type');
+  // Define response headers clearly
+  const jsonHeaders = {
+    'Access-Control-Allow-Origin': '*',
+    'Access-Control-Allow-Methods': 'POST, OPTIONS',
+    'Access-Control-Allow-Headers': 'Content-Type',
+    'Content-Type': 'application/json'
+  };
 
   if (request.method === 'OPTIONS') {
-    return new Response(null, { status: 204, headers });
+    return new Response(null, { status: 204, headers: jsonHeaders });
   }
 
   try {
     const { content } = await request.json();
     if (!content) {
-      return new Response(JSON.stringify({ error: 'No content provided' }), {
+      return new Response(JSON.stringify({ error: 'No content provided', success: false }), {
         status: 400,
-        headers: { ...headers, 'Content-Type': 'application/json' }
+        headers: jsonHeaders
       });
     }
 
-    // Use YtoTech LaTeX API - reliable and free
+    // Use YtoTech LaTeX API
     const response = await fetch('https://latex.ytotech.com/builds/sync', {
       method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
+      headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
         compiler: 'pdflatex',
-        resources: [
-          {
-            main: true,
-            content: content
-          }
-        ]
+        resources: [{ main: true, content: content }]
       }),
     });
 
     if (!response.ok) {
       const errorText = await response.text();
       return new Response(JSON.stringify({ 
-        error: `Compilation failed: ${response.status}. ${errorText.substring(0, 500)}`,
+        error: `LaTeX API error: ${response.status}. ${errorText.substring(0, 100)}`,
         success: false 
       }), {
         status: 500,
-        headers: { ...headers, 'Content-Type': 'application/json' }
+        headers: jsonHeaders
       });
     }
 
@@ -52,49 +47,26 @@ export async function onRequestPost(context) {
     
     if (contentType && contentType.includes('application/pdf')) {
       const pdfBuffer = await response.arrayBuffer();
-      
-      // Use Buffer for high-performance Base64 conversion
-      // This is much faster than manual loops and prevents CPU timeouts
-      // Requires "nodejs_compat" flag in wrangler.toml
       const base64Pdf = Buffer.from(pdfBuffer).toString('base64');
       
       return new Response(JSON.stringify({ pdf: base64Pdf, success: true }), {
         status: 200,
-        headers: { ...headers, 'Content-Type': 'application/json' }
+        headers: jsonHeaders
       });
     } else {
       const errorData = await response.text();
-      let errorMessage = 'Compilation failed';
-      
-      try {
-        const jsonError = JSON.parse(errorData);
-        if (jsonError.logs) {
-          const errorLines = jsonError.logs.split('\n').filter(line => 
-            line.includes('Error') || line.includes('!') || line.includes('error')
-          );
-          errorMessage = errorLines.slice(0, 10).join('\n') || jsonError.logs.substring(0, 1000);
-        } else if (jsonError.error) {
-          errorMessage = jsonError.error;
-        }
-      } catch {
-        errorMessage = errorData.substring(0, 1000);
-      }
-      
       return new Response(JSON.stringify({ 
-        error: errorMessage, 
+        error: `Unexpected response: ${errorData.substring(0, 100)}`, 
         success: false 
       }), {
         status: 200,
-        headers: { ...headers, 'Content-Type': 'application/json' }
+        headers: jsonHeaders
       });
     }
   } catch (err) {
-    return new Response(JSON.stringify({ 
-      error: err.message, 
-      success: false 
-    }), {
+    return new Response(JSON.stringify({ error: err.message, success: false }), {
       status: 500,
-      headers: { ...headers, 'Content-Type': 'application/json' }
+      headers: jsonHeaders
     });
   }
 }

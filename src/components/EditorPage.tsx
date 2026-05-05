@@ -97,15 +97,13 @@ export default function EditorPage({ onBack, theme, setTheme }: EditorPageProps)
       // Diagnostic logging
       const contentType = res.headers.get('content-type');
       const rawText = await res.text();
-      console.log('API Response Status:', res.status);
-      console.log('API Content-Type:', contentType);
       
       let result;
       try {
         result = JSON.parse(rawText);
       } catch (parseErr) {
-        console.error('JSON Parse Error. Raw response:', rawText);
-        throw new Error(`Invalid JSON response from server: ${rawText.substring(0, 100)}`);
+        const errorSnippet = rawText.substring(0, 200) || '(Empty Response Body)';
+        throw new Error(`Server Error (${res.status} ${res.statusText}): ${errorSnippet}`);
       }
 
       if (result.success && result.pdf) {
