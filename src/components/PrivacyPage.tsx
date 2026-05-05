@@ -32,9 +32,7 @@ export default function PrivacyPage({ onBack, onNavigate }: PrivacyPageProps) {
           <span>Back to Home</span>
         </button>
         <div className="flex items-center gap-3">
-          <div className="w-8 h-8 bg-gradient-to-br from-emerald-400 to-teal-500 rounded-lg flex items-center justify-center">
-            <span className="text-white font-bold text-sm">A<sub className="text-[8px]">L</sub></span>
-          </div>
+          <img src="/AuraLaTeX_Logo.png" alt="AuraLaTeX Logo" className="w-8 h-8 object-contain" />
           <span className="font-semibold">AuraLaTeX</span>
         </div>
       </nav>

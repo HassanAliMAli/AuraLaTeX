@@ -83,9 +83,7 @@ export default function LandingPage({ onGetStarted, onNavigate }: LandingPagePro
       {/* Navigation */}
       <nav className="relative z-10 flex items-center justify-between px-6 md:px-12 py-6">
         <div className="flex items-center gap-3">
-          <div className="w-10 h-10 bg-gradient-to-br from-emerald-400 to-teal-500 rounded-xl flex items-center justify-center shadow-lg shadow-emerald-500/30">
-            <span className="text-white font-bold">A<sub className="text-[10px]">L</sub></span>
-          </div>
+          <img src="/AuraLaTeX_Logo.png" alt="AuraLaTeX Logo" className="w-10 h-10 object-contain" />
           <span className="text-xl font-bold tracking-tight">AuraLaTeX</span>
         </div>
         <div className="flex items-center gap-4">
@@ -390,11 +388,10 @@ export default function LandingPage({ onGetStarted, onNavigate }: LandingPagePro
       <footer className="relative z-10 px-6 md:px-12 py-12 border-t border-white/10">
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-3">
-            <div className="w-8 h-8 bg-gradient-to-br from-emerald-400 to-teal-500 rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-sm">T<sub className="text-[8px]">X</sub></span>
-            </div>
+            <img src="/AuraLaTeX_Logo.png" alt="AuraLaTeX Logo" className="w-8 h-8 object-contain" />
             <span className="font-semibold">AuraLaTeX</span>
           </div>
+
           <p className="text-zinc-500 text-sm">
             © 2024 AuraLaTeX. Free and open source.
           </p>

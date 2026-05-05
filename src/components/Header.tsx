@@ -75,9 +75,7 @@ export default function Header({
           onClick={onBack}
           title="Back to Home"
         >
-          <div className="w-8 h-8 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-lg flex items-center justify-center shadow-lg group-hover:shadow-emerald-500/30">
-            <span className="text-white font-bold text-sm">A<sub className="text-[10px]">L</sub></span>
-          </div>
+          <img src="/AuraLaTeX_Logo.png" alt="AuraLaTeX Logo" className="w-8 h-8 object-contain" />
           <span className="font-semibold text-foreground text-lg tracking-tight hidden md:block">AuraLaTeX</span>
         </div>
 
