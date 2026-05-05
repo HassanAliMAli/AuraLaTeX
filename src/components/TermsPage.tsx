@@ -165,7 +165,7 @@ export default function TermsPage({ onBack, onNavigate }: TermsPageProps) {
           <div className="flex items-center gap-6 text-sm text-zinc-400">
             <button onClick={() => onNavigate('privacy')} className="hover:text-white transition-colors">Privacy</button>
             <span className="text-white">Terms</span>
-            <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">GitHub</a>
+            <a href="https://github.com/HassanAliMAli/AuraLaTeX" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">GitHub</a>
           </div>
         </div>
       </footer>

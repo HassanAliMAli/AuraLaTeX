@@ -89,7 +89,7 @@ export default function LandingPage({ onGetStarted, onNavigate }: LandingPagePro
           <span className="text-xl font-bold tracking-tight">AuraLaTeX</span>
         </div>
         <div className="flex items-center gap-4">
-          <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="text-zinc-400 hover:text-white transition-colors hidden sm:block">
+          <a href="https://github.com/HassanAliMAli/AuraLaTeX" target="_blank" rel="noopener noreferrer" className="text-zinc-400 hover:text-white transition-colors hidden sm:block">
             GitHub
           </a>
           <button
@@ -411,7 +411,7 @@ export default function LandingPage({ onGetStarted, onNavigate }: LandingPagePro
             >
               Terms
             </button>
-            <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">GitHub</a>
+            <a href="https://github.com/HassanAliMAli/AuraLaTeX" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">GitHub</a>
           </div>
         </div>
       </footer>

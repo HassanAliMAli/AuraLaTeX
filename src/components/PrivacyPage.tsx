@@ -131,7 +131,7 @@ export default function PrivacyPage({ onBack, onNavigate }: PrivacyPageProps) {
           <div className="flex items-center gap-6 text-sm text-zinc-400">
             <span className="text-white">Privacy</span>
             <button onClick={() => onNavigate('terms')} className="hover:text-white transition-colors">Terms</button>
-            <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">GitHub</a>
+            <a href="https://github.com/HassanAliMAli/AuraLaTeX" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">GitHub</a>
           </div>
         </div>
       </footer>
