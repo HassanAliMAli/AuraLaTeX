@@ -94,7 +94,19 @@ export default function EditorPage({ onBack, theme, setTheme }: EditorPageProps)
         body: JSON.stringify({ content }),
       });
 
-      const result = await res.json();
+      // Diagnostic logging
+      const contentType = res.headers.get('content-type');
+      const rawText = await res.text();
+      console.log('API Response Status:', res.status);
+      console.log('API Content-Type:', contentType);
+      
+      let result;
+      try {
+        result = JSON.parse(rawText);
+      } catch (parseErr) {
+        console.error('JSON Parse Error. Raw response:', rawText);
+        throw new Error(`Invalid JSON response from server: ${rawText.substring(0, 100)}`);
+      }
 
       if (result.success && result.pdf) {
         setPdfData(result.pdf);
