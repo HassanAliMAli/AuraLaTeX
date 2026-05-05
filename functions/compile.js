@@ -53,14 +53,10 @@ export async function onRequestPost(context) {
     if (contentType && contentType.includes('application/pdf')) {
       const pdfBuffer = await response.arrayBuffer();
       
-      // Manual loop conversion to avoid "Maximum call stack size exceeded" 
-      // which happens with String.fromCharCode(...new Uint8Array(buffer)) on files > 64KB
-      const bytes = new Uint8Array(pdfBuffer);
-      let binary = '';
-      for (let i = 0; i < bytes.byteLength; i++) {
-        binary += String.fromCharCode(bytes[i]);
-      }
-      const base64Pdf = btoa(binary);
+      // Use Buffer for high-performance Base64 conversion
+      // This is much faster than manual loops and prevents CPU timeouts
+      // Requires "nodejs_compat" flag in wrangler.toml
+      const base64Pdf = Buffer.from(pdfBuffer).toString('base64');
       
       return new Response(JSON.stringify({ pdf: base64Pdf, success: true }), {
         status: 200,
