@@ -393,7 +393,7 @@ export default function LandingPage({ onGetStarted, onNavigate }: LandingPagePro
           </div>
 
           <p className="text-zinc-500 text-sm">
-            © 2024 AuraLaTeX. Free and open source.
+            © 2026 AuraLaTeX. Free and open source.
           </p>
           <div className="flex items-center gap-6 text-sm text-zinc-400">
             <button 
