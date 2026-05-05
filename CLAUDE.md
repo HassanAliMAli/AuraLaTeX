@@ -4,8 +4,8 @@
 - **Frontend**: React 19, TypeScript, Vite, Tailwind CSS 4
 - **Animations**: Framer Motion
 - **Icons**: Lucide React
-- **Backend**: Vercel Serverless Functions (Node.js)
-- **Database/Auth**: Supabase
+- **Hosting**: Cloudflare Pages
+- **Backend**: Cloudflare Pages Functions (Edge Runtime)
 - **LaTeX Compilation**: External API (YtoTech LaTeX API)
 
 ## Code Style
@@ -31,11 +31,10 @@
 - **Preview**: `npm run preview`
 
 ## Project Structure
-- `api/`: Backend serverless functions (Vercel)
+- `functions/`: Cloudflare Pages Functions (Edge Runtime)
 - `src/components/`: UI components and page layouts
-- `src/lib/`: Shared libraries (Supabase client)
 - `src/types/`: TypeScript interfaces and types
-- `public/`: Static assets (favicons, etc.)
+- `public/`: Static assets (logo, favicons, etc.)
 
 ## Conventions
 - **Routing**: Handled via `window.location.hash` and state in `App.tsx`
