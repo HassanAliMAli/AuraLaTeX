@@ -2,8 +2,8 @@
 
 A professional, AI-powered LaTeX editor and compiler built for high-performance scientific writing on the web.
 
-![Demo](./assets/demo.gif)
-*Note: Replace with actual screenshot or GIF*
+## Demo / Screenshot
+![AuraLaTeX Hero](./public/auralatex.jpg)
 
 ## Table of Contents
 1. [Project Title & Badges](#auralatex)
